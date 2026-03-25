@@ -129,7 +129,7 @@ class CommentPreprocessor(object):
           data_file = commentExtract(inputFile)
           data = licenseComment(data_file)
           outFile.write(data)
-        except Exception as e:
+        except IndexError as e:
           # if nirjas fails to parse, fallback to copying file as-is
           logging.warning(f"Nirjas failed to extract comments from "
                           f"{inputFile}: {e}. Falling back to raw copy.")
